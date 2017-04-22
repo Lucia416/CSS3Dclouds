@@ -1,0 +1,128 @@
+body{
+  background-image: url('./images/background.jpg');
+  color:white;
+  font-family: 'Russo One', sans-serif;
+}
+@keyframes introAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(2) translateY(-0.75em);
+  }
+  20% {
+    opacity: 0.8;
+  }
+  30%{
+    opacity:1;
+    transform: scale(1);
+  }
+  59% {
+    opacity: 0;
+    transform: translateZ(-1000em);
+
+  }
+  100% {
+    opacity: 0;
+
+  }
+}
+
+@keyframes spin {
+  0%,5% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  20%, 28% {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+  45%, 50% {
+    opacity: 0;
+    transform: translateZ(-1000em);
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes introduction {
+  0%,30%{
+    opacity:0;
+    transform:translateZ(35em) rotateX(60deg);
+  }
+  31%{
+    opacity:1;
+    transform: translateZ(35em)  rotateX(60deg);
+  }
+  80%{
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+    transform: translateZ(-90em) rotateX(60deg);
+
+  }
+}
+
+
+.lucia, .threeD{
+
+  animation: introAnimation 30s ease-out infinite;
+}
+.lucia{
+  margin-top: 100px;
+  margin-left: 400px;
+  margin-right: 400px;
+}
+.threeD{
+  margin-top: 100px;
+  margin-left:575px;
+  margin-right:575px;
+}
+
+#lu{
+  height:200px;
+  width:600px;
+}
+
+#tD{
+  height:200px;
+  width:250px;
+}
+
+span{
+  animation: spin 30s ease-out infinite;
+  display: inline-block;
+
+}
+
+#interactive{
+  margin-top: 0;
+  margin-left: 420px;
+  font-size: 1.8em;
+  letter-spacing: 0.4em;
+  height:50px;
+  width:620px;
+
+}
+
+.description{
+  margin-left: 170px;
+  width:1000px;
+  position:absolute;
+  top:150px;
+  transform: rotateX(60deg);
+  animation: introduction 30s ease-in-out infinite;
+  transform-style: preserve-3d;
+  overflow:hidden;
+
+
+}
+
+
+.intro{
+  transform-style: preserve-3d;
+  perspective: 500px;
+}
